@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_chat.xml"
+    app:startDestination="@id/chatListFragment">
+
+    <fragment
+        android:id="@+id/chatListFragment"
+        android:name="kg.kyrgyzcoder.primedoc02.ui.chat.ChatListFragment"
+        android:label="fragment_chat_list"
+        tools:layout="@layout/fragment_chat_list" >
+        <action
+            android:id="@+id/action_chatListFragment_to_chatActualFragment"
+            app:destination="@id/chatActualFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatActualFragment"
+        android:name="kg.kyrgyzcoder.primedoc02.ui.chat.ChatActualFragment"
+        android:label="fragment_chat_actual"
+        tools:layout="@layout/fragment_chat_actual" >
+        <action
+            android:id="@+id/action_chatActualFragment_to_chatListFragment"
+            app:destination="@id/chatListFragment" />
+        <action
+            android:id="@+id/action_chatActualFragment_to_imageFullFragment"
+            app:destination="@id/imageFullFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFullFragment"
+        android:name="kg.kyrgyzcoder.primedoc02.ui.chat.ImageFullFragment"
+        android:label="fragment_image_full"
+        tools:layout="@layout/fragment_image_full" >
+        <action
+            android:id="@+id/action_imageFullFragment_to_chatActualFragment"
+            app:destination="@id/chatActualFragment" />
+    </fragment>
+</navigation>
